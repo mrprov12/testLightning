@@ -79,9 +79,16 @@ export default class Menu extends Lightning.Component {
     // let activeItem = activeItem()
     console.log('Menu -> handle enter -> activeItem-> action', this.items[this._index])
     let el = this.items[this._index].action
+    //FIXME: it doesnt like the _pulse.on --> idea is to send a signal back to the state class held in app.js so it switches setState
     this._pulse.on(el, () => {
       if (el === 'start') {
         this.signal('start')
+      } else if (el === 'continue') {
+        this.signal('continue')
+      } else if (el === 'about') {
+        this.signal('about')
+      } else if (el === 'exit') {
+        this.signal('exit')
       }
     })
   }
