@@ -38,6 +38,7 @@ export default class App extends Lightning.Component {
       //can yse type attribute to determine component type in template definition
       //signals property: a Signal (see docs) tells the parent component that some event happened on this component
       Splash: { type: Splash, signals: { loaded: true }, alpha: 0 },
+      //FIXME: Added both Main and Game as hidden components, with the idea we can show them when that state is triggered
       Main: { type: Main, alpha: 0 },
       Game: { type: Game, alpha: 0 },
     }
@@ -121,6 +122,8 @@ export default class App extends Lightning.Component {
           return this.tag('Main')
         }
       },
+
+      //FIXME: Added this class to the state component in an attempt to use this to transfer to Game state and display board/fix focus on game element/handle key handlers
       class Game extends this {
         $enter() {
           console.log('enter state -> Game')
