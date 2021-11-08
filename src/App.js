@@ -87,8 +87,25 @@ export default class App extends Lightning.Component {
           })
         }
 
+        //FIXME: first attempt at trying to handle the pulse signals, this one should handle transitioning state to Game so that game can show up on screen, be focus, and handle keys
         start() {
+          console.log('Menu -> App -> start')
           this._setState('Game')
+        }
+
+        //FIXME: should transfer to state that allows you to continue game?
+        continue() {
+          console.log('Menu-> App  -> continue')
+        }
+
+        //FIXME: I have no idea what this is supposed to go to
+        about() {
+          console.log('Menu-> App  -> about')
+        }
+
+        //FIXME: again no idea
+        exit() {
+          console.log('Menu-> App  -> exit')
         }
 
         //change focus path to main
