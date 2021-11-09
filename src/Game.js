@@ -141,6 +141,7 @@ export default class Game extends Lightning.Component {
           return [
             class Winner extends this {
               $enter(args, { winner }) {
+                console.log('End.Winner $enter', winner)
                 if (winner === 'X') {
                   this._playerScore += 1
                 } else {
@@ -156,7 +157,7 @@ export default class Game extends Lightning.Component {
                   },
                   Notification: {
                     text: {
-                      Text: `${
+                      text: `${
                         winner === 'X' ? 'Player' : 'Computer'
                       } wins (press enter to try again)`,
                     },
@@ -183,7 +184,6 @@ export default class Game extends Lightning.Component {
       },
     ]
   }
-
   //active: lifecycle event - called when a component is visible = true && alpha > 0 && positioned in the renderable screen
   _active() {
     this._reset()
@@ -205,7 +205,7 @@ export default class Game extends Lightning.Component {
     this.render(this._tiles)
 
     //change back to rootstate
-    this._setState('')
+    this._setState('Game')
   }
 
   //Need to setup rendering tiles and showing outlines on active before we can proceed to implement remote control handling

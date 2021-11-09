@@ -39,7 +39,7 @@ const getFutureWinningIndex = tiles => {
   return index
 }
 
-export default {
+let Utils = {
   AI: tiles => {
     const mostLogicalIndex = getFutureWinningIndex(tiles)
     if (mostLogicalIndex !== -1) {
@@ -62,8 +62,11 @@ export default {
     const regex = /(x{3}|0{3})/i
     const set = getMatchingPatterns(regex, tiles)
     if (set) {
+      console.log('set', set.join('')[0])
       return tiles[set.join('')[0]]
     }
     return false
   },
 }
+
+export default Utils
