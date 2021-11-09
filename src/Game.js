@@ -214,7 +214,7 @@ export default class Game extends Lightning.Component {
       return {
         x: (idx % 3) * 300 + 110,
         y: ~~(idx / 3) * 300 + 90,
-        test: { text: el === 'e' ? '' : `${el}`, fontSize: 100 },
+        text: { text: el === 'e' ? '' : `${el}`, fontSize: 100, textColor: 0xffffffff },
       }
     })
   }
