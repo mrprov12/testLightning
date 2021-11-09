@@ -18,6 +18,12 @@ export default class Main extends Lightning.Component {
           { label: 'ABOUT', action: 'about' },
           { label: 'EXIT', action: 'exit' },
         ],
+        passSignals: {
+          start: 'start',
+          continue: 'continue',
+          about: 'about',
+          exit: 'exit',
+        },
       },
     }
   }

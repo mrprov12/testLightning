@@ -39,7 +39,11 @@ export default class App extends Lightning.Component {
       //signals property: a Signal (see docs) tells the parent component that some event happened on this component
       Splash: { type: Splash, signals: { loaded: true }, alpha: 0 },
       //FIXME: Added both Main and Game as hidden components, with the idea we can show them when that state is triggered
-      Main: { type: Main, alpha: 0 },
+      Main: {
+        type: Main,
+        signals: { start: 'start', continue: 'continue', about: 'about', exit: 'exit' },
+        alpha: 0,
+      },
       Game: { type: Game, alpha: 0 },
     }
   }
@@ -68,7 +72,7 @@ export default class App extends Lightning.Component {
         //Meant to prevent excessive conditionals
         loaded() {
           this._setState('Main')
-          console.log('loaded setState state -> Splash')
+          console.log('loaded setState state -> Splash', this._getFocused())
         }
       },
       class Main extends this {
@@ -87,11 +91,11 @@ export default class App extends Lightning.Component {
             smooth: { alpha: 0, y: 0 },
           })
         }
-
         //FIXME: first attempt at trying to handle the pulse signals, this one should handle transitioning state to Game so that game can show up on screen, be focus, and handle keys
         start() {
           console.log('Menu -> App -> start')
           this._setState('Game')
+          console.log('Menu -> App -> start --> setstate --> focused', this._getFocused())
         }
 
         //FIXME: should transfer to state that allows you to continue game?
@@ -108,6 +112,26 @@ export default class App extends Lightning.Component {
         exit() {
           console.log('Menu-> App  -> exit')
         }
+        // _handleEnter() {
+        //   let el = this.items[this._index]
+        //   console.log('Menu -> handle enter', el)
+
+        // // let activeItem = activeItem()
+        // console.log('Menu -> handle enter -> activeItem-> action', this.items[this._index].action)
+        // let el = this.items[this._index].action
+
+        // //FIXME: it doesnt like the _pulse.on --> idea is to send a signal back to the state class held in app.js so it switches setState
+        // if (el === 'start') {
+        //   console.log(' this.signal(start)')
+        //   this.signal('start')
+        // } else if (el === 'continue') {
+        //   this.signal('continue')
+        // } else if (el === 'about') {
+        //   this.signal('about')
+        // } else if (el === 'exit') {
+        //   this.signal('exit')
+        // }
+        // }
 
         //change focus path to main
         //component which handles the remotecontrol

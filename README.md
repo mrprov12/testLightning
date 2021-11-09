@@ -78,7 +78,8 @@ Has some example keyboard nav functionality, not necessarily “inbuilt tile-nav
 Flex and flexItem props define flex/related layout settings
 Possible to nest flex containers,  making them both flex containers and flex items
 Links to css flex box resources in docs because is so similar to LightningJS flexbox; only a few things differ, and are listed in two tables in docs. Mostly prop name differences, only a handful of actual property characteristic difference
-Animation: how easy? What's the language?
+
+### Animation: how easy? What's the language?
 Animation is handled within Lightningjs, in an animations library
 Also has a lightning-based transitions library
 It is controlled by life cycle hooks to manage start/stop
