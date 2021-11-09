@@ -38,3 +38,29 @@ const getFutureWinningIndex = tiles => {
   }
   return index
 }
+
+const AI = tiles => {
+  return getFutureWinningIndex(tiles)
+}
+
+const getWinner = tiles => {
+  const player = /(ex{2}|x{2}e|xex)/i
+  const ai = /(e0{2}|0{2}e|0e0)/i
+
+  const set = [...getMatchingPatterns(player, tiles), ...getMatchingPatterns(ai, tiles)]
+
+  let winner
+
+  // if (set.length) {
+  //   set.pop().forEach(tileIndex => {
+  //     if (tiles[tileIndex] === 'e') {
+  //       winner = undefined
+  //     }
+  //   })
+  // }
+
+  console.log('Set', set)
+  return 'x'
+}
+
+export default { getMatchingPatterns, getFutureWinningIndex, AI, getWinner }

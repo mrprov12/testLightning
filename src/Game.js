@@ -17,7 +17,8 @@
  * limitations under the License.
  */
 
-import { Lightning, Utils } from '@lightningjs/sdk'
+import { Lightning } from '@lightningjs/sdk'
+import Utils from './GameUtils'
 
 export default class Game extends Lightning.Component {
   static _template() {
