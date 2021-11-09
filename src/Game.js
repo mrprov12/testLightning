@@ -266,7 +266,7 @@ export default class Game extends Lightning.Component {
 
   _handleEnter() {
     if (this._tiles[this._index] === 'e') {
-      if (this.place(this._index, 'x')) {
+      if (this.place(this._index, 'X')) {
         this._setState('Computer')
       }
     }

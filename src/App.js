@@ -31,6 +31,11 @@ export default class App extends Lightning.Component {
 
   static _template() {
     return {
+      Logo: {
+        x: 100,
+        y: 100,
+        text: { text: 'TicTacToe', fontFace: 'pixel' },
+      },
       rect: true,
       color: 0xff000000,
       w: 1920,

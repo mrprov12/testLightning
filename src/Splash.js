@@ -25,7 +25,7 @@ export default class Splash extends Lightning.Component {
     this._pulse = this.tag('Logo').animation({
       duration: 4,
       repeat: 0,
-      actions: [{ p: 'alpha', v: { 0: 0, 1: 0.5, 1: 0 } }],
+      actions: [{ p: 'alpha', v: { 0: 0, 0.5: 0.5, 1: 0 } }],
     })
 
     // add a finish eventlistener, so we can send a signal to the parent when the animation is completed
