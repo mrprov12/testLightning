@@ -20,7 +20,7 @@
 import { Lightning, Utils } from '@lightningjs/sdk'
 import Splash from './Splash.js'
 import Main from './Main.js'
-import Game from './Game.js'
+import Player from './Game.js'
 
 export default class App extends Lightning.Component {
   static getFonts() {
@@ -49,7 +49,7 @@ export default class App extends Lightning.Component {
         signals: { start: 'start', continue: 'continue', about: 'about', exit: 'exit' },
         alpha: 0,
       },
-      Game: { type: Game, alpha: 0 },
+      Game: { type: Player, alpha: 0 },
     }
   }
 

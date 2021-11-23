@@ -13,7 +13,7 @@ export default class Main extends Lightning.Component {
         //adding non-lightning properties (like items) will make that property directly available in Component definition this.items
         //if you define a setter (set items(v){}) the setter will be automatically called upon initialization FIXME: what is a setter?
         items: [
-          { label: 'START A NEW GAME', action: 'start' },
+          { label: 'START VIDEO PLAYER', action: 'start' },
           { label: 'CONTINUE', action: 'continue' },
           { label: 'ABOUT', action: 'about' },
           { label: 'EXIT', action: 'exit' },
